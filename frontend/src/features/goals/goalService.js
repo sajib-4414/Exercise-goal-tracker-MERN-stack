@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/goals/"
+const base_url = process.env.REACT_APP_API_URI
+const API_URL = base_url + '/api/goals/'
 
 //create a new goal
 const createGoal = async(goalData, token) => {
