@@ -1,0 +1,58 @@
+version: '3.7'
+
+services:
+  server:
+    build:
+      context: ../../backend
+      dockerfile: Dockerfile.backend
+    image: mern-server-dev-image
+    container_name: mern-server-container
+    command: sh -c " ls &&
+              npx nodemon server.js"
+    # different volume used for code in order to protect the volume
+    # being replaced by /usr/app/node_modules
+    volumes:
+      - ./backend-volume/:/usr/app/code 
+      - /usr/app/node_modules
+    ports:
+      - "5000:5000"
+    env_file: .env # to load the environment variables.
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_API_URI = http://shamsul-dev1.rits.uregina.ca
+    networks:
+      - app-net
+  # mongo:
+  #   image: mongo
+  #   volumes:
+  #     - data-volume:/data/db
+  #   ports:
+  #     - "27017:27017"
+  #   networks:
+  #     - app-network
+  client:
+    build:
+      context: ../../frontend
+      dockerfile: Dockerfile.react
+    image: mern-client-dev-image
+    container_name: mern-client-container
+    command: npm start
+    volumes:
+      - ./frontend-volume/:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"
+    networks:
+      - app-net
+
+networks:
+  app-net:
+
+# could be used for shared volume, will be used later
+# volumes:
+#     backend-volume:
+#     node_modules:
+#     web-root:
+#       driver: local
