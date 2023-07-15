@@ -3,7 +3,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-ENV REACT_APP_API_URI = http://shamsul-dev1.rits.uregina.ca:5000
+# COPY ./.env .
+# ENV REACT_APP_API_URI = http://shamsul-dev1.rits.uregina.ca:5000
 RUN npm ci
 RUN npm run build
 

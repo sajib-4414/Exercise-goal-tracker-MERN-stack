@@ -1,13 +1,21 @@
 import axios from 'axios'
-const base_url = process.env.REACT_APP_API_URI
+//known issue cannot get the app uril url passed as environment variable
+// const base_url = process.env.REACT_APP_API_URI
+const base_url = 'http://shamsul-dev1.rits.uregina.ca:5000'
 const API_URL = base_url + '/api/users/'
+// const API_URL = '/api/users/'
 
 
 
 const register = async (userData) => {
-    const response = await axios.post(API_URL, userData)
-    console.log("printing login url")
+    console.log("printing register url")
     console.log(API_URL)
+    console.log("printing base url;")
+    console.log(base_url)
+    console.log("printing just api")
+    console.log(process.env.API_URI)
+    const response = await axios.post(API_URL, userData)
+    
   
     if (response.data) {
       localStorage.setItem('user', JSON.stringify(response.data))

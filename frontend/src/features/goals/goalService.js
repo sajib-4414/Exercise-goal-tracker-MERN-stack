@@ -1,6 +1,6 @@
 import axios from "axios";
-
-const base_url = process.env.REACT_APP_API_URI
+const base_url = 'http://shamsul-dev1.rits.uregina.ca:5000'
+// const base_url = process.env.REACT_APP_API_URI
 const API_URL = base_url + '/api/goals/'
 
 //create a new goal
