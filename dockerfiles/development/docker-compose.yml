@@ -19,7 +19,6 @@ services:
     env_file: .env # to load the environment variables.
     environment:
       - NODE_ENV=development
-      - REACT_APP_API_URI = http://shamsul-dev1.rits.uregina.ca
     networks:
       - app-net
   # mongo:
@@ -42,6 +41,9 @@ services:
       - /usr/app/node_modules
     depends_on:
       - server
+    env_file: ./frontendenv/.env # to load the environment variables.
+    # environment: # not loading the environment variables
+    #   - REACT_APP_API_URI = http://shamsul-dev1.rits.uregina.ca:5000
     ports:
       - "3000:3000"
     networks:

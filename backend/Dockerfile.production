@@ -1,0 +1,18 @@
+# Dockerfile for node client
+
+# Build react client
+FROM node:18-alpine
+
+# Working directory be app
+WORKDIR /usr/app
+
+COPY package*.json ./
+
+# RUN npm install
+# If you are building your code for production
+RUN npm ci --omit=dev
+# Bundle app source
+COPY . .
+
+EXPOSE 8080
+CMD [ "node", "server.js" ]

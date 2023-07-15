@@ -1,0 +1,47 @@
+version: '3.7'
+# MUST: to run the production docker compose yaml run npm install
+# in thebackend first, to generate a package.lock.json
+services:
+  server:
+    build:
+      context: ../../backend
+      dockerfile: Dockerfile.production
+    image: mern-server-production-image
+    container_name: mern-server-production-container
+    volumes:
+      - ../../backend/:/usr/app 
+      - /usr/app/node_modules
+    ports:
+      - "5000:5000"
+    env_file: .env # to load the environment variables.
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-net
+  client:
+    build:
+      context: ../../frontend
+      dockerfile: Dockerfile
+    image: mern-client-server-image
+    container_name: mern-client-prod-container
+    # command: npm start
+    # volumes:
+    #   - ./frontend-volume/:/usr/app
+    #   - /usr/app/node_modules
+    depends_on:
+      - server
+    env_file: ./frontendenv/.env # to load the environment variables.
+    ports:
+      - "80:80"
+    networks:
+      - app-net
+
+networks:
+  app-net:
+
+# could be used for shared volume, will be used later
+# volumes:
+#     backend-volume:
+#     node_modules:
+#     web-root:
+#       driver: local

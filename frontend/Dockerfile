@@ -1,0 +1,15 @@
+FROM node:18-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+ENV REACT_APP_API_URI = http://shamsul-dev1.rits.uregina.ca:5000
+RUN npm ci
+RUN npm run build
+
+#production
+FROM nginx:1.9.15-alpine
+EXPOSE 80
+COPY ./etc/nginx.conf /etc/nginx/conf.d/default.conf
+# COPY ./docker/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/build /usr/share/nginx/html
