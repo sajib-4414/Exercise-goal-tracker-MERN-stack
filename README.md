@@ -14,14 +14,14 @@ This repository contains the source code and documentation for the Exercise Goal
 
 ## Table of Contents
 
--   [Features](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/master/README.md#features)
--   [Tech Stack](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/master/README.md#tech-stack)
-    -   [Development](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/master/README.md#development)
-    -   [Deployment](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/master/README.md#deployment)
--   [Setup](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/master/README.md#setup)
--   [Usage](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/master/README.md#usage)
--   [CI/CD](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/master/README.md#cicd)
--   [Monitoring](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/master/README.md#monitoring)
+-   [Features](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/blob/master/README.md#features)
+-   [Tech Stack](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/blob/master/README.md#tech-stack)
+    -   [Development](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/blob/master/README.md#development)
+    -   [Deployment](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/blob/master/README.md#deployment)
+-   [Setup](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/blob/master/README.md#setup)
+-   [Usage](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/blob/master/README.md#usage)
+-   [CI/CD](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/blob/master/README.md#cicd)
+-   [Monitoring](https://github.com/sajib-4414/Exercise-goal-tracker-MERN-stack/blob/master/README.md#monitoring)
 
 ## Features
 
