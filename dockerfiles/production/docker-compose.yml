@@ -5,7 +5,7 @@ services:
   server:
     build:
       context: ../../backend
-      dockerfile: Dockerfile.production
+      dockerfile: Dockerfile
     image: mern-server-production-image
     container_name: mern-server-production-container
     volumes:
@@ -13,7 +13,7 @@ services:
       - /usr/app/node_modules
     ports:
       - "5000:5000"
-    env_file: .env # to load the environment variables.
+    # env_file: .env # to load the environment variables.
     environment:
       - NODE_ENV=development
     networks:

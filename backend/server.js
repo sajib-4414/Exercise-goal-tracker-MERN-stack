@@ -4,7 +4,9 @@ const colors = require('colors')
 const dotenv = require('dotenv').config()
 const connectDB = require('./config/db')
 const cors = require('cors');
-const port = process.env.port || 5000
+const PORT = 5000 //workaround, env from dockerfile is not being
+//loaded, but from docker compose it does
+const port = PORT || 5000
 
 connectDB()
 const {errorHandler} = require('.//middleware/errorMiddleWare')

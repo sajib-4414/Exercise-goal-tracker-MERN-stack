@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-2048-1
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: app-2048-1
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: app-2048-1
+    spec:
+      containers:
+      - image: 792849899666.dkr.ecr.us-west-2.amazonaws.com/backend-repo:latest
+        imagePullPolicy: Always
+        name: app-2048-1
+        ports:
+        - containerPort: 5000
+---
+#frontend
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-2048-2
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: app-2048-2
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: app-2048-2
+    spec:
+      containers:
+      - image: 792849899666.dkr.ecr.us-west-2.amazonaws.com/frontend-repo:latest
+        imagePullPolicy: Always
+        name: app-2048-2
+        ports:
+        - containerPort: 80

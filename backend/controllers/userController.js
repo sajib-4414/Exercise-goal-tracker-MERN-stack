@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
 const User = require('../models/userModel')
-
+const JWT_SECRET = "abc123"
 //@desc Register new user
 //@route POST /api/users
 //@access Public
@@ -79,7 +79,12 @@ const getMe = asyncHandler( async (req,res) =>{
 
 //Generate JWT
 const generateToken = (id) =>{
-    return jwt.sign({id},process.env.JWT_SECRET, {
+    // return jwt.sign({id},process.env.JWT_SECRET, {
+    //     expiresIn: '30d'
+    // })
+    //envs are not being passed from dockerfile, hence this is for
+    //kubernetes
+    return jwt.sign({id},JWT_SECRET, {
         expiresIn: '30d'
     })
 }
