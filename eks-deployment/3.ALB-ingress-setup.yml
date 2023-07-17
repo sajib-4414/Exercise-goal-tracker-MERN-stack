@@ -5,7 +5,7 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-# ALB ingress controller file MUST expects a / route, you can have /api or anything. but keep a / route
+# alb ingress expects a / route as a must
 spec:
   ingressClassName: alb
   rules:

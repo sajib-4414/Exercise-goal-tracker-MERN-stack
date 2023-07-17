@@ -4,8 +4,7 @@ const colors = require('colors')
 const dotenv = require('dotenv').config()
 const connectDB = require('./config/db')
 const cors = require('cors');
-const PORT = 5000 //workaround, env from dockerfile is not being
-//loaded, but from docker compose it does
+const PORT = process.env.PORT
 const port = PORT || 5000
 
 connectDB()
