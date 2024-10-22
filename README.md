@@ -1,10 +1,12 @@
 # Exercise Goal tracker
 
-Exercise Goal tracker built witn MERN full stack and AWS CI/CD with AWS Elastic Kubernetes Service deployment.
+The app allows users to manage their exercise goals with features such as secure login and signup, the ability to create, update, and delete goals, support for day-wise, week-wise, and monthly tracking, and summary statistics for completed goals.
+
+Technical stack: Exercise Goal tracker built witn MERN full stack and AWS CI/CD with AWS Elastic Kubernetes Service deployment.
 
 ## Description
 
-This repository contains the source code and documentation for the Exercise Goal tracker application. The application is built with the MERN (MongoDB, Express, React, Node.js) full stack, and it provides functionalities for managing exercise goals. Following functionalities are supported till now.
+This custom excercise tracking app provides functionalities such as,
 - Login functionality
 - Signup functionality
 - Create, update, and delete exercise goals
